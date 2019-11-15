@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { randomSongs } from '../services/api-helper';
-
+import Input from './Input';
 
 class Search extends Component {
   constructor(props) {
@@ -11,10 +11,19 @@ class Search extends Component {
     };
   }
 
-  componentDidMount = async () => {
-    const data = await randomSongs(this.state.userInput);
+  // componentDidMount = async () => {
+  //   const data = await randomSongs(this.state.userInput);
+  //   this.setState({
+  //     songs: data
+  //   });
+  // };
+
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    const Ran = await randomSongs(this.state.userInput)
+    console.log(Ran)
     this.setState({
-      songs: data
+      songs: Ran
     });
   };
 
@@ -28,7 +37,14 @@ class Search extends Component {
   render() {
     return (
       <div className="App Search">
-        <h1>Hello from Search</h1>
+        <div>
+          <Input
+            userInput={this.state.userInput}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            songs={this.state.songs}
+          />
+        </div>
       </div>
     )
   }
