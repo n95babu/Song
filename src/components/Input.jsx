@@ -23,7 +23,7 @@ class Input extends Component {
           <div className="scrollable-area">
             {this.props.songs.map(song => (
               <div key={song.id}>
-                <h1>{song.trackCensoredName}</h1>
+                <h3>{song.trackCensoredName}</h3>
                 <p>{song.artistName}</p>
                 <AudioPlayer
                   src={song.previewUrl}
