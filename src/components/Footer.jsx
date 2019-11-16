@@ -8,14 +8,12 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 const useStyles = makeStyles({
 })
 const Footer = () => {
-  // debugger;
   const classes = useStyles();
   const [value, setValue] = React.useState('recents');
 
   const handleChange = (newValue) => {
     setValue(newValue);
   };
-
   return (
     <div className='Footer'>
       <BottomNavigation value={value} onChange={handleChange} className={classes.root}>

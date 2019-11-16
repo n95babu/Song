@@ -1,3 +1,5 @@
+/* Global CSS */
+
 .App {
   text-align: center;
   min-height: 100vh;
@@ -8,6 +10,8 @@
 .logo {
   height: 12vmin;
 }
+
+/* Contact Css */
 
 .contact-section p {
   display: flex;
@@ -61,4 +65,10 @@
   align-items: center;
   padding: 20px;
   margin-bottom: 33px;
+}
+
+/* Home CSS */
+
+.form-control {
+  text-align: center;
 }

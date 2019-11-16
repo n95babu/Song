@@ -19,13 +19,10 @@ class ContactForm extends React.Component {
       .catch(function (error) {
         console.log(error)
       });
-
-
   }
   handleFields = e => this.setState({
     [e.target.name]: e.target.value
   });
-
   render() {
     return (
       <>
