@@ -1,4 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import AudioPlayer from "react-h5-audio-player";
+
+// const Player = () => (
+//   <AudioPlayer
+//     autoPlay
+//     src="http://example.com/audio.mp3"
+//     onPlay={e => console.log("onPlay")}
+//     // other props here
+//   />
+// );
 
 class Input extends Component {
   render() {
@@ -19,18 +29,22 @@ class Input extends Component {
           </div>
           <div className="scrollable-area">
             {this.props.songs.map(song => (
-              <div className="rounded-pill">
+              //  key = {this.props.song.id}
+              < div className="rounded-pill" >
                 <div className="scrollable">
                   <h1>{song.trackCensoredName}</h1>
                   <p>{song.artistName}</p>
-                  <p>{song.collectionViewUrl}</p>
+                  <AudioPlayer
+                    src={song.previewUrl}
+                  // onPlay={e => console.log("onPlay")}
+                  />
 
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 }

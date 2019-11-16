@@ -21,7 +21,6 @@ class Search extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const Ran = await randomSongs(this.state.userInput)
-    console.log(Ran)
     this.setState({
       songs: Ran
     });
