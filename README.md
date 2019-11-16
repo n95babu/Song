@@ -1,6 +1,8 @@
 # LyRICS
 ![Logo](https://imgur.com/nEM3LCD.png)
-<h1>Live</h1> <a> https://lyrics-nb.surge.sh/ </a>
+
+ https://lyrics-nb.surge.sh/ 
+
 ## Functional Heirarch
 
 ```
