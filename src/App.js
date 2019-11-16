@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
-import Home from './components/Home';
 import Search from './components/Search';
-
-
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -16,14 +15,13 @@ class App extends Component {
           <div>
             <Nav />
             <Switch>
-              <Route path='/' exact component={Home} />
-              <Route path='/Search' component={Search} />
-              {/* <Route path='/contact' component={Contact} />
-               <Route path='/Map' component={Map} /> */} */}
+              <Route path='/' exact component={Search} />
+              <Route path='/contact' component={Contact} />
 
             </Switch>
           </div>
         </Router>
+        <Footer />
       </div>
     )
   }

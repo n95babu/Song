@@ -11,13 +11,6 @@ class Search extends Component {
     };
   }
 
-  // componentDidMount = async () => {
-  //   const data = await randomSongs(this.state.userInput);
-  //   this.setState({
-  //     songs: data
-  //   });
-  // };
-
   handleSubmit = async (e) => {
     e.preventDefault();
     const Ran = await randomSongs(this.state.userInput)
@@ -31,8 +24,6 @@ class Search extends Component {
       userInput: e.target.value
     });
   };
-
-
   render() {
     return (
       <div className="App Search">
