@@ -1,15 +1,13 @@
 pipeline {
-    agent {
-            agent any
-
-//         docker {
-//             image 'node:latest'
-//             args '-p 3000:3000'
-//         }
-    }
-    environment {
-        CI = 'true'
-    }
+    agent any
+        // docker {
+        //     image 'node:latest'
+        //     args '-p 3000:3000'
+        // }
+    
+    // environment {
+    //     CI = 'true'
+    // }
     stages {
         stage('Build') {
             steps {
