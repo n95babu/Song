@@ -1,17 +1,14 @@
-pipeline {
-    agent any
-        // docker {
-        //     image 'node:latest'
-        //     args '-p 3000:3000'
-        // }
-    
-    // environment {
-    //     CI = 'true'
-    // }
+pipeline {                                                                                                       
+     agent {
+        docker {
+          image 'node:10.11.0-alpine'
+        }
+     }
     stages {
         stage('Build') {
             steps {
-                 sh "/usr/bin/npm install"
+                sh "npm install"
+
             }
         }
         stage('Test') {
