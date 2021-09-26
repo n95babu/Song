@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:10.11.0-alpine'
+            image 'node:6-alpine'
             args '-p 3000:3000'
         }
     }
@@ -17,6 +17,11 @@ pipeline {
         stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
+            }
+        }
+        stage('Test') {
+            steps {
+                emailext (to: 'n95babu@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("target/surefire-reports/emailable-report.html"), mimeType: 'text/html');
             }
         }
         stage('Deliver') {
